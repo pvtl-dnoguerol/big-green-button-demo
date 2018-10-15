@@ -1,4 +1,4 @@
-<h2 i18n>Eine Kleine Fußball Geschichte</h2>
+<h2 i18n>Eine Kleine Fußball Geschichte - CF Summit 2018</h2>
 <div id="controls" class="row">
   <div class="col-lg-12">
     <span i18n>Jahre</span>: <select #t (change)="setYear(t.value)"><option *ngFor="let year of years">{{year}}</option></select>
@@ -9,7 +9,7 @@
     <app-loader *ngIf="loading"></app-loader>
     <div *ngIf="!loading && !error && matches && matches.length > 0">
       <!-- mapTypeId could be roadmap, hybrid or satellite -->
-      <agm-map [latitude]="0" [longitude]="0" [zoom]="2" [minZoom]="1" [mapTypeId]="'roadmap'">
+      <agm-map [latitude]="0" [longitude]="0" [zoom]="2" [minZoom]="1" [mapTypeId]="'satellite'">
         <agm-marker *ngFor="let match of matches" [latitude]="match.locationLat" [longitude]="match.locationLong">
           <agm-info-window>
               <h6>
